@@ -3,17 +3,17 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>JARVIS Interactive Dashboard</title>
+    <title>JARVIS Multi-Agent Command Center</title>
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
     <main class="app-shell">
       <section class="hero-card" aria-labelledby="hero-title">
         <p class="eyebrow">Interactive AI Interface</p>
-        <h1 id="hero-title">Meet JARVIS, your browser-based mission console.</h1>
+        <h1 id="hero-title">Meet JARVIS and a team of mission-ready AI agents.</h1>
         <p class="hero-copy">
-          Ask questions, launch quick actions, and watch the dashboard respond with
-          animated status cards, voice-style replies, and live task tracking.
+          Activate the command center, route requests to specialist agents, launch quick actions,
+          and watch the dashboard respond with live status cards, voice-style replies, and task tracking.
         </p>
         <div class="hero-actions">
           <button id="activateBtn" class="primary-btn">Activate system</button>
@@ -21,16 +21,41 @@
         </div>
       </section>
 
+      <section class="agent-grid" aria-label="AI agent roster">
+        <article class="agent-card active" data-agent="jarvis" tabindex="0" role="button" aria-pressed="true">
+          <span class="agent-icon" aria-hidden="true">🤖</span>
+          <div>
+            <h2>JARVIS</h2>
+            <p>Primary strategist for planning, synthesis, and overall coordination.</p>
+          </div>
+        </article>
+        <article class="agent-card" data-agent="friday" tabindex="0" role="button" aria-pressed="false">
+          <span class="agent-icon" aria-hidden="true">🛰️</span>
+          <div>
+            <h2>FRIDAY</h2>
+            <p>Security analyst for scans, diagnostics, and threat monitoring.</p>
+          </div>
+        </article>
+        <article class="agent-card" data-agent="edith" tabindex="0" role="button" aria-pressed="false">
+          <span class="agent-icon" aria-hidden="true">📡</span>
+          <div>
+            <h2>EDITH</h2>
+            <p>Research agent for data lookups, briefings, and decision support.</p>
+          </div>
+        </article>
+      </section>
+
       <section class="console-card" aria-label="JARVIS console">
         <div class="console-header">
           <span class="status-dot" aria-hidden="true"></span>
           <span id="systemStatus">System idle</span>
+          <span id="activeAgentBadge" class="active-agent">JARVIS selected</span>
         </div>
         <div id="responsePanel" class="response-panel" aria-live="polite">
-          Good day. Initialize the system or send a command to begin.
+          Good day. Select an agent, initialize the system, or send a command to begin.
         </div>
         <form id="commandForm" class="command-form">
-          <label class="sr-only" for="commandInput">Command JARVIS</label>
+          <label class="sr-only" for="commandInput">Command the selected agent</label>
           <input
             id="commandInput"
             type="text"
@@ -60,6 +85,7 @@
             <button class="chip" data-command="Run diagnostics">Diagnostics</button>
             <button class="chip" data-command="Plan my day">Plan day</button>
             <button class="chip" data-command="Scan the room">Scan</button>
+            <button class="chip" data-command="Create agent briefing">Briefing</button>
           </div>
         </article>
       </section>
