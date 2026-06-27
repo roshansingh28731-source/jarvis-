@@ -139,12 +139,6 @@ quickActions.forEach((button) => {
 
 agentCards.forEach((card) => {
   card.addEventListener('click', () => selectAgent(card.dataset.agent));
-  card.addEventListener('keydown', (event) => {
-    if (event.key === 'Enter' || event.key === ' ') {
-      event.preventDefault();
-      selectAgent(card.dataset.agent);
-    }
-  });
 });
 
 addTaskBtn.addEventListener('click', () => addTask());

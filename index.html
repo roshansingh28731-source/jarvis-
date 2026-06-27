@@ -16,36 +16,36 @@
           and watch the dashboard respond with live status cards, voice-style replies, and task tracking.
         </p>
         <div class="hero-actions">
-          <button id="activateBtn" class="primary-btn">Activate system</button>
-          <button id="themeBtn" class="ghost-btn" aria-pressed="false">Switch theme</button>
+          <button id="activateBtn" class="primary-btn" type="button">Activate system</button>
+          <button id="themeBtn" class="ghost-btn" type="button" aria-pressed="false">Switch theme</button>
         </div>
       </section>
 
       <section class="agent-grid" aria-label="AI agent roster">
-        <article class="agent-card active" data-agent="jarvis" tabindex="0" role="button" aria-pressed="true">
+        <button class="agent-card active" type="button" data-agent="jarvis" aria-pressed="true">
           <span class="agent-icon" aria-hidden="true">🤖</span>
           <div>
             <h2>JARVIS</h2>
             <p>Primary strategist for planning, synthesis, and overall coordination.</p>
           </div>
-        </article>
-        <article class="agent-card" data-agent="friday" tabindex="0" role="button" aria-pressed="false">
+        </button>
+        <button class="agent-card" type="button" data-agent="friday" aria-pressed="false">
           <span class="agent-icon" aria-hidden="true">🛰️</span>
           <div>
             <h2>FRIDAY</h2>
             <p>Security analyst for scans, diagnostics, and threat monitoring.</p>
           </div>
-        </article>
-        <article class="agent-card" data-agent="edith" tabindex="0" role="button" aria-pressed="false">
+        </button>
+        <button class="agent-card" type="button" data-agent="edith" aria-pressed="false">
           <span class="agent-icon" aria-hidden="true">📡</span>
           <div>
             <h2>EDITH</h2>
             <p>Research agent for data lookups, briefings, and decision support.</p>
           </div>
-        </article>
+        </button>
       </section>
 
-      <section class="console-card" aria-label="JARVIS console">
+      <section class="console-card" aria-label="Selected agent console">
         <div class="console-header">
           <span class="status-dot" aria-hidden="true"></span>
           <span id="systemStatus">System idle</span>
@@ -77,15 +77,15 @@
         <article class="widget">
           <h2>Mission Tasks</h2>
           <ul id="taskList" class="task-list"></ul>
-          <button id="addTaskBtn" class="small-btn">Add random task</button>
+          <button id="addTaskBtn" class="small-btn" type="button">Add random task</button>
         </article>
         <article class="widget">
           <h2>Quick Actions</h2>
           <div class="chip-row">
-            <button class="chip" data-command="Run diagnostics">Diagnostics</button>
-            <button class="chip" data-command="Plan my day">Plan day</button>
-            <button class="chip" data-command="Scan the room">Scan</button>
-            <button class="chip" data-command="Create agent briefing">Briefing</button>
+            <button class="chip" type="button" data-command="Run diagnostics">Diagnostics</button>
+            <button class="chip" type="button" data-command="Plan my day">Plan day</button>
+            <button class="chip" type="button" data-command="Scan the room">Scan</button>
+            <button class="chip" type="button" data-command="Create agent briefing">Briefing</button>
           </div>
         </article>
       </section>
