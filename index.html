@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JARVIS Multi-Agent Command Center</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="app-shell">
+      <section class="hero-card" aria-labelledby="hero-title">
+        <p class="eyebrow">Interactive AI Interface</p>
+        <h1 id="hero-title">Meet JARVIS and a team of mission-ready AI agents.</h1>
+        <p class="hero-copy">
+          Activate the command center, route requests to specialist agents, launch quick actions,
+          and watch the dashboard respond with live status cards, voice-style replies, and task tracking.
+        </p>
+        <div class="hero-actions">
+          <button id="activateBtn" class="primary-btn" type="button">Activate system</button>
+          <button id="themeBtn" class="ghost-btn" type="button" aria-pressed="false">Switch theme</button>
+        </div>
+      </section>
+
+      <section class="agent-grid" aria-label="AI agent roster">
+        <button class="agent-card active" type="button" data-agent="jarvis" aria-pressed="true">
+          <span class="agent-icon" aria-hidden="true">🤖</span>
+          <div>
+            <h2>JARVIS</h2>
+            <p>Primary strategist for planning, synthesis, and overall coordination.</p>
+          </div>
+        </button>
+        <button class="agent-card" type="button" data-agent="friday" aria-pressed="false">
+          <span class="agent-icon" aria-hidden="true">🛰️</span>
+          <div>
+            <h2>FRIDAY</h2>
+            <p>Security analyst for scans, diagnostics, and threat monitoring.</p>
+          </div>
+        </button>
+        <button class="agent-card" type="button" data-agent="edith" aria-pressed="false">
+          <span class="agent-icon" aria-hidden="true">📡</span>
+          <div>
+            <h2>EDITH</h2>
+            <p>Research agent for data lookups, briefings, and decision support.</p>
+          </div>
+        </button>
+      </section>
+
+      <section class="console-card" aria-label="Selected agent console">
+        <div class="console-header">
+          <span class="status-dot" aria-hidden="true"></span>
+          <span id="systemStatus">System idle</span>
+          <span id="activeAgentBadge" class="active-agent">JARVIS selected</span>
+        </div>
+        <div id="responsePanel" class="response-panel" aria-live="polite">
+          Good day. Select an agent, initialize the system, or send a command to begin.
+        </div>
+        <form id="commandForm" class="command-form">
+          <label class="sr-only" for="commandInput">Command the selected agent</label>
+          <input
+            id="commandInput"
+            type="text"
+            placeholder="Try: scan the room, plan my day, run diagnostics..."
+            autocomplete="off"
+          />
+          <button type="submit">Send</button>
+        </form>
+      </section>
+
+      <section class="widgets" aria-label="Interactive widgets">
+        <article class="widget">
+          <h2>Energy Core</h2>
+          <div class="meter" aria-label="Energy core charge">
+            <span id="energyMeter"></span>
+          </div>
+          <p><strong id="energyValue">72%</strong> charge available</p>
+        </article>
+        <article class="widget">
+          <h2>Mission Tasks</h2>
+          <ul id="taskList" class="task-list"></ul>
+          <button id="addTaskBtn" class="small-btn" type="button">Add random task</button>
+        </article>
+        <article class="widget">
+          <h2>Quick Actions</h2>
+          <div class="chip-row">
+            <button class="chip" type="button" data-command="Run diagnostics">Diagnostics</button>
+            <button class="chip" type="button" data-command="Plan my day">Plan day</button>
+            <button class="chip" type="button" data-command="Scan the room">Scan</button>
+            <button class="chip" type="button" data-command="Create agent briefing">Briefing</button>
+          </div>
+        </article>
+      </section>
+    </main>
+    <script src="script.js"></script>
+  </body>
+</html>
